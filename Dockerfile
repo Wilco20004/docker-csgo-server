@@ -25,7 +25,7 @@ RUN chown -R $USER:$USER $SERVER
 USER $USER
 RUN curl http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -C $SERVER -xvz \
  && $SERVER/update.sh
-
+VOLUME ["/home/csgo/hlserver/csgo"]
 EXPOSE 27015/udp
 
 WORKDIR /home/$USER/hlserver
